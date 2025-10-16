@@ -28,6 +28,12 @@
 - Handled by: ASIC's (hardware chip designed to perform a specific set of tasks very efficiently)
 
 ### Packet Switching 
+- When a router recive a packet on ingress interface, it decides the appropriate egress interface to forward that packet — this process is called packet switching
+- Which is impacted by Control Plane & Data Plane 
 
+Types of Packet Switching:
+
+**Process Switching**
+- Refer to method where the router's CPU is directly involved in decision making process of switching
 
 
