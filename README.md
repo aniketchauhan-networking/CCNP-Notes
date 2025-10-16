@@ -1,4 +1,4 @@
-# 🧠 CCNP - Cisco Certified Network Professional (ENCOR + ENARSI)
+# CCNP - Cisco Certified Network Professional (ENCOR + ENARSI)
 
 ## 📘 Syllabus
 - Types of Planes  
@@ -6,11 +6,11 @@
 
 ---
 
-### 🧱 Type of Plane
+### Type of Plane
 
 **Management Plane**  
-- **Purpose:** Used to manage, monitor, and configure the device.  
-- **Traffic Type:** Administrative traffic between a network administrator and the device.  
+- **Purpose:** Used to **manage, monitor, and configure** the device.  
+- **Traffic Type:** **Administrative traffic** between a network administrator and the device.  
 - **Examples:** SSH, Telnet, SNMP, Syslog, NTP  
 - **Handled by:** CPU  
 
@@ -29,14 +29,14 @@
 
 ---
 
-### 📦 Packet Switching
+### Packet Switching
 
 - When a router **receives a packet** on an **ingress interface**, it decides the **appropriate egress interface** to forward that packet — this process is called **packet switching**.  
 - Packet switching performance is mainly influenced by the **Control Plane** and the **Data Plane**.
 
 ---
 
-### ⚙️ Process Switching
+**Process Switching**
 
 - Process switching refers to a method where the **router’s CPU** is **directly involved in making forwarding decisions** for **every incoming packet**.  
 - This is the **slowest** form of packet switching, as each packet is handled individually in software.
