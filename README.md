@@ -1,6 +1,6 @@
 # CCNP - Cisco Certified Network Professional (ENCOR + ENARSI)
 
-## 📘 Syllabus
+## Syllabus
 - Types of Planes  
 - Packet Switching  
 
@@ -37,15 +37,53 @@
 **Process Switching**
 
 - Process switching refers to a method where the **router’s CPU** is **directly involved in making forwarding decisions** for **every incoming packet**.  
-- This is the **slowest** form of packet switching, as each packet is handled individually in software.
+- This is the **slowest** form of packet switching
+- **Per-Packet Load Balancing**
 
-#### Steps:
+**Steps:**
 1. When a packet arrives at the router, it is **stored in memory (buffered)**.  
 2. The **CPU performs a lookup** in the **global routing table** to determine the **best path** to the destination.  
 3. The CPU then **decrements the TTL (Time-To-Live)** field and **recalculates the IP header checksum**.  
 4. The CPU **resolves the next-hop IP address** and finds the **corresponding Layer 2 (MAC) address**.  
 5. Finally, the CPU **rewrites the Ethernet header** and **forwards the packet** out of the **appropriate egress interface**.
 
-Note - CPU intensive and can led to high latency and 
+To enable -
 
-###
+```bash
+ip route-cache switching process
+```
+
+Note:
+processs switching can also be enabled if you disable fast switching & CEF
+To disable fast switching - no ip route-cache
+To disable cef switching - no ip cef
+
+Note - CPU intensive lead to high latency and reduce throughput
+
+What is latency and throughput?
+
+Latency
+- time delay between when a request is sent and when the response begins to arrive. 
+- how long it takes the first drop of water to travel through the pipe.
+
+Throughput 
+- amount of data successfully transferred over a network per unit time. 
+- how much water flows per second.
+
+**Fast Switching**
+- Aka **“process once and switch many times”**
+- **Load balancing:** per-destination
+- **How it works:**
+  1. First packet of a flow goes to **CPU / route processor** to check the **RIB** (control plane)
+  2. Router saves **next-hop & outgoing interface** in **fast cache / Switch Engine** (data plane)
+  3. **Susequent packets to same destination** use this **cache**, no CPU needed
+
+
+Drawback of Fast Switching
+- Cache entries expiry
+- Limited cache size
+- Not synchronized to RIB which can create issue dynamic network changes
+
+
+**CEF - Cisco Express Forwarding**
+- Maintain two table in data plane - FIB (Forwarding Information Base)
