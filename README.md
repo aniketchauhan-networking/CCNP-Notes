@@ -34,8 +34,6 @@
 - When a router **receives a packet** on an **ingress interface**, it decides the **appropriate egress interface** to forward that packet — this process is called **packet switching**.  
 - Packet switching performance is mainly influenced by the **Control Plane** and the **Data Plane**.
 
----
-
 **Process Switching**
 
 - Process switching refers to a method where the **router’s CPU** is **directly involved in making forwarding decisions** for **every incoming packet**.  
