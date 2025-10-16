@@ -1,9 +1,8 @@
-# CCNP - Cisco Certified Network Professional
+# 🧠 CCNP - Cisco Certified Network Professional (ENCOR + ENARSI)
 
-## Sllaybus
-
-- Types of Planes
-- Packet Switching
+## 📘 Syllabus
+- Types of Planes  
+- Packet Switching  
 
 ---
 
@@ -31,16 +30,24 @@
 ---
 
 ### 📦 Packet Switching
+
 - When a router **receives a packet** on an **ingress interface**, it decides the **appropriate egress interface** to forward that packet — this process is called **packet switching**.  
 - Packet switching performance is mainly influenced by the **Control Plane** and the **Data Plane**.
 
-**Process Switching**
+---
+
+### ⚙️ Process Switching
 
 - Process switching refers to a method where the **router’s CPU** is **directly involved in making forwarding decisions** for **every incoming packet**.  
+- This is the **slowest** form of packet switching, as each packet is handled individually in software.
 
+#### Steps:
 1. When a packet arrives at the router, it is **stored in memory (buffered)**.  
 2. The **CPU performs a lookup** in the **global routing table** to determine the **best path** to the destination.  
 3. The CPU then **decrements the TTL (Time-To-Live)** field and **recalculates the IP header checksum**.  
 4. The CPU **resolves the next-hop IP address** and finds the **corresponding Layer 2 (MAC) address**.  
 5. Finally, the CPU **rewrites the Ethernet header** and **forwards the packet** out of the **appropriate egress interface**.
 
+Note - CPU intensive and can led to high latency and 
+
+###
